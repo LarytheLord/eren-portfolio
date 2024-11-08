@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: rgb(239, 68, 68);
+  --primary-hover: rgb(220, 38, 38);
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.nav-link {
+  @apply relative hover:text-red-500 transition-colors;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-red-500 transform scale-x-0 transition-transform origin-left;
+}
+
+.nav-link:hover::after {
+  @apply scale-x-100;
+}
